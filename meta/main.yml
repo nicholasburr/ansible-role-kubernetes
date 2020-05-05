@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  role_name: kubernetes
   author: Nicholas Burr
   description: Deploy a single master Kubernetes cluster with kubeadm.
 
