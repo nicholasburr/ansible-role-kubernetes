@@ -1,0 +1,10 @@
+---
+- import_tasks: kubeadm.yml
+
+# Setup master machine
+- import_tasks: master.yml
+  when: kubernetes_cluster_role == 'master'
+
+# Setup worker machine(s)
+- import_tasks: worker.yml
+  when: kubernetes_cluster_role == 'worker'
