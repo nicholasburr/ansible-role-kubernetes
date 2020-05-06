@@ -16,5 +16,4 @@ galaxy_info:
     - kubernetes
     - kubeadm
 
-dependencies:
-  - nicholasburr.docker_ce
+dependencies: []
