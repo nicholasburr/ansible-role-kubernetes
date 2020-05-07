@@ -12,6 +12,11 @@
   - net.bridge.bridge-nf-call-ip6tables
   - net.bridge.bridge-nf-call-iptables
 
+- name: pin kubernetes v{{ kubernetes_version }}
+  template:
+    src: kubernetes.j2
+    dest: /etc/apt/preferences.d/kubernetes
+    
 - name: add google apt key
   apt_key:
     url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
@@ -21,11 +26,6 @@
   apt_repository:
     repo: "deb http://apt.kubernetes.io/ kubernetes-xenial main"
     state: present
-
-- name: pin kubernetes v{{ kubernetes_version }}
-  template:
-    src: kubernetes.j2
-    dest: /etc/apt/preferences.d/kubernetes
 
 - name: install kubernetes v{{ kubernetes_version }}
   apt:
