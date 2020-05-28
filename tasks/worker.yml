@@ -1,6 +1,6 @@
 ---
 - name: join worker machine
-  command: "{{ kubernetes_join_command }}"
+  shell: "{{ kubernetes_join_command }}" # shell is required; ansible-lint 305.
   args:
     creates: /etc/kubernetes/kubelet.conf
 # The 'creates' arg does not accept a list; these file(s) are what kubeadm is  checking for
