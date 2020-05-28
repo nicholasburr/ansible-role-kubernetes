@@ -1,7 +1,7 @@
 ---
 # start master initalization
 - name: get kubeadm verison
-  shell: kubeadm version -o yaml | grep gitVersion | awk '{ print $2 }'
+  shell: (set -o pipefail && kubeadm version -o yaml | grep gitVersion | awk '{ print $2 }')
   register: kubeadm_init_version
   changed_when: false
 
