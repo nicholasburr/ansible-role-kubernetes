@@ -14,6 +14,7 @@
            --pod-network-cidr=10.244.0.0/16
   args:
     creates: /etc/kubernetes/manifests/kube-apiserver.yaml
+  register: kubernetes_master_initalized
 # The 'creates' arg does not accept a list; these file(s) are what kubeadm is  checking for
 #    - /etc/kubernetes/manifests/etcd.yaml
 #    - /etc/kubernetes/manifests/kube-apiserver.yaml
