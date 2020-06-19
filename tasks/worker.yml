@@ -1,6 +1,6 @@
 ---
 - name: join worker machine
-  command: "{{ kubernetes_join_command }}" # shell is required; ansible-lint 305.
+  command: "{{ kubernetes_join_command }}"
   args:
     creates: /etc/kubernetes/kubelet.conf
   when: kubernetes_join_command is defined
